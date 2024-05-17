@@ -39,8 +39,8 @@ The number of times needed to get the same result: 4
 ## 2. Discussion on Finding K and Elements Less Than K
 - Finding K
     + The `binary_search` function function performs a binary search on the sorted list to find the position of K.
-    + Complexity: O(log(2n)) because the list has a length of `2*n`.
-    + Average number of trials: log(2n).
+    + Complexity: O(log(n)) .
+    + Average number of trials: log(n).
 - Finding Elements Less Than K
     + From the position of K found above, we simply iterate backward through the list to get the elements smaller than K.
     + Complexity: O(n)
