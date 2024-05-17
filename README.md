@@ -36,6 +36,45 @@ Cohort1_Screening_Test % python count_matching_lists.py
 4024
 The number of times needed to get the same result: 4
 ```
+- It's possible to predict the next random number if we have the seed. The seed is used to initialize the random number generator and determine the sequence of random numbers that the generator will produce. When we provide the same seed to the generator, it will generate the same sequence of random numbers each time it runs. Below is an example:
+```python
+
+import random
+
+def predict_random():
+    # Generate a random seed
+    seed = random.randint(0, 100000)
+    
+    # Initialize a random number generator with the corresponding seed
+    random.seed(seed)
+    
+    # Generate a sequence of random numbers
+    random_numbers = [random.random() for _ in range(10)]
+    
+    # Retrieve the seed and initialize the random number generator with the retrieved seed
+    random.seed(seed)
+    
+    # Generate the sequence of random numbers again
+    predicted_numbers = [random.random() for _ in range(10)]
+    
+    # Compare the generated sequences of random numbers
+    if random_numbers == predicted_numbers:
+        return True
+    else:
+        return False
+
+# Check whether the result of the random() function can be predicted based on the seed
+if predict_random():
+    print("The result of the random() function can be predicted based on the seed.")
+else:
+    print("The result of the random() function cannot be predicted based on the seed.")
+  
+  ```
+Result:
+```
+% python predict.py
+The result of the random() function can be predicted based on the seed.
+```
 ## 2. Discussion on Finding K and Elements Less Than K
 - Finding K
     + The `binary_search` function function performs a binary search on the sorted list to find the position of K.
@@ -46,7 +85,7 @@ The number of times needed to get the same result: 4
     + Complexity: O(x) with x is position of K in list.
 ## 3. Which problems can be solved by quantum computing
 
-### Problems of computer:
+### Problems of classic computer:
 - As we can see from the previous section, there are some problems with generating random numbers on classical computers:
     + They are not actually generated randomly, but rather through algorithms. Even though the Mersenne Twister algorithm has a large period, as shown in the test above, it still produces some repetitions of results.
     + The sequence can be predicted if the seed is known.
