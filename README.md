@@ -43,4 +43,26 @@ The number of times needed to get the same result: 4
     + Average number of trials: log(n).
 - Finding Elements Less Than K
     + From the position of K found above, we simply iterate backward through the list to get the elements smaller than K.
-    + Complexity: O(x) with x is position of K in list. 
+    + Complexity: O(x) with x is position of K in list.
+## 3. Which problems can be solved by quantum computing
+
+### Problems of computer:
+- As we can see from the previous section, there are some problems with generating random numbers on classical computers:
+    + They are not actually generated randomly, but rather through algorithms. Even though the Mersenne Twister algorithm has a large period, as shown in the test above, it still produces some repetitions of results.
+    + The sequence can be predicted if the seed is known.
+- Find K in list:
+    + In order to be as fast as possible, I sorted the initial list from smallest to largest when generating random numbers. Therefore, when applying binary search, its complexity is only O(log(N)). However, if a list is not sorted, searching for an element K in the list can take up to O(N).
+- Elements less than K in list:
+    + Since the list is sorted from smallest to largest and the position of element K has been sorted in the list, the complexity is only O(x) where x is the position of K in the list. However, if the list is not sorted, other methods such as iterating through all elements must be used, which will result in a complexity of O(N).
+### How can quantum computers solve these problems?
+- Random number:
+    + Quantum computers can generate truly random numbers using quantum effects such as superposition and entanglement. We will not know what their state is until we measure it and collapse occurs.
+- Find K in list:
+    + If we apply Grover's algorithm on a quantum computer, the complexity of finding K is only O(sqrt(N)).
+- Elements less than K in list:
+    + If we use Grover's algorithm for each search for an element less than K, the complexity will be O(sqrt(N) * M), where M is the number of elements less than K.
+
+
+
+
+
