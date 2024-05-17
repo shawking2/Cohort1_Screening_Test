@@ -43,4 +43,4 @@ The number of times needed to get the same result: 4
     + Average number of trials: log(n).
 - Finding Elements Less Than K
     + From the position of K found above, we simply iterate backward through the list to get the elements smaller than K.
-    + Complexity: O(K)
+    + Complexity: O(x) with x is position of K in list. 
