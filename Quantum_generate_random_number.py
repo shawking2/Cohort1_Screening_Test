@@ -1,5 +1,8 @@
-from qiskit import QuantumCircuit, transpile, assemble
+from qiskit import QuantumCircuit, transpile
 from qiskit_aer import Aer
+from qiskit.visualization import plot_histogram
+import matplotlib.pyplot as plt
+
 # Global variable to count the number of times a random number is generated
 total_generated = 0
 
@@ -26,13 +29,21 @@ def generate_random_number(min_value, max_value):
     # Measure the qubits and store the results in the corresponding cbits
     circuit.measure(range(num_bits), range(num_bits))
 
+    # Draw the quantum circuit
+    #circuit.draw(output='mpl')
+    #plt.show()
+
     # Use the Aer simulator to run the quantum circuit
     backend = Aer.get_backend('qasm_simulator')
-    result = backend.run(
-        assemble(transpile(circuit, backend=backend))).result()
+    transpiled_circuit = transpile(circuit, backend=backend)
+    result = backend.run(transpiled_circuit).result()
     
     # Get the measurement results from the simulator
     counts = result.get_counts(circuit)
+
+    # Plot the histogram of results
+    #plot_histogram(counts)
+    #plt.show()
 
     # Select the first bit string from the measurement results (in this case, only running 1 shot)
     random_bitstring = list(counts.keys())[0]
