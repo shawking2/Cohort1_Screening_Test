@@ -102,7 +102,7 @@ The result of the random() function can be predicted based on the seed.
     + If we use Grover's algorithm for each search for an element less than K, the complexity will be O(sqrt(N) * M), where M is the number of elements less than K.
 ## 4. Implement solution using quantum computing.
 ### Generate Random Number
-- Quantum_Generate_Random_Number program is a simple example of this. Its operation is also quite simple. First, initialize n qubits with the state of 0, then apply the Hadamard gate to put them into superposition. When a qubit is in a superposition state, we will not know its state until we measure it, this is a property of quantum mechanics. The probability here is 50% |0> and 50% |1>. Then we proceed to measure them to get the value of the state. For example for n=5 qubits, we can represent it as follows:
+- Quantum_Generate_Random_Number program (file Quantum_Generate_Random_Number.py) is a simple example of this. Its operation is also quite simple. First, initialize n qubits with the state of 0, then apply the Hadamard gate to put them into superposition. When a qubit is in a superposition state, we will not know its state until we measure it, this is a property of quantum mechanics. The probability here is 50% |0> and 50% |1>. Then we proceed to measure them to get the value of the state. For example for n=5 qubits, we can represent it as follows:
 ![Equation](https://github.com/shawking2/Cohort1_Screening_Test/blob/main/image/Img_hm.png)
 - Each combination of the states |0⟩ and |1⟩ occurs with equal probability, specifically 1/32 for each combination.
 - Running Program:
