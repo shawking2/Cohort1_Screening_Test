@@ -100,7 +100,7 @@ The result of the random() function can be predicted based on the seed.
     + If we apply Grover's algorithm on a quantum computer, the complexity of finding K is only O(sqrt(N)).
 - Elements less than K in list:
     + If we use Grover's algorithm for each search for an element less than K, the complexity will be O(sqrt(N) * M), where M is the number of elements less than K.
-
+## 4. Implement solution using quantum computing.
 
 
 
