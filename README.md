@@ -82,7 +82,7 @@ The result of the random() function can be predicted based on the seed.
     + Average number of trials: log(n).
 - Finding Elements Less Than K
     + From the position of K found above, we simply iterate backward through the list to get the elements smaller than K.
-    + Complexity: O(x) with x is position of K in list.
+    + Complexity: O(n).
 ## 3. Which problems can be solved by quantum computing
 
 ### Problems of classic computer:
